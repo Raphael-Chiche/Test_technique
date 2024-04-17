@@ -12,6 +12,18 @@
     "Picture": "3_0038_35029_PRG_PHOT_35029.jpg"
   },
   {
+    "Id":"0038__38138",
+    "Name": "CONFIDENTIEL",
+    "City": "Saint-Germain-en-Laye",
+    "PostalCode": "78100",
+    "Latitude": "48.9105833",
+    "Longitude": "2.3829986",
+    "Price": "36500000",
+    "NbRoomsMin": "2",
+    "NbRoomsMax": "5",
+    "Picture": "3_0038_35029_PRG_PHOT_35029.jpg"
+  },
+  {
     "Id": "0076__76072",
     "Name": "FAUBOURG 56",
     "City": "Montpellier",

@@ -11,7 +11,6 @@ export const Transport = async (lon: number, lat: number) => {
 
     const data = await response.json();
     const lignes = data.map((item: any) => item.ligne);
-
     const imageMap: { [key: string]: string } = {
       "RER A": "Paris_transit_icons_-_RER_A.svg",
       "RER B": "Paris_transit_icons_-_RER_B.svg",
@@ -68,14 +67,25 @@ export const Transport = async (lon: number, lat: number) => {
     };
 
     const images = lignes.map((ligne: string) => {
-      return ligne in imageMap ? imageMap[ligne] : undefined;
+      const key = Object.keys(imageMap).find((k) =>
+        new RegExp(`^${k}( |\\(|$)`).test(ligne)
+      );
+      return key ? imageMap[key] : undefined;
     });
+    // const images = lignes.map((ligne: string) => {
+    //   console.log("test" + ligne.includes(imageMap[ligne]));
+    //   console.log("test 2",ligne);
+    //   const test = ligne.includes(imageMap[ligne]);      
+    //   console.log("test 3",imageMap[ligne]);
+      
+    //   return ligne.includes(imageMap[ligne]) ? imageMap[ligne] : undefined;
+    // });
 
-    console.log(images);
+    
     return images;
   } catch (Error) {
     console.error("Error:", Error);
   }
 };
 
-Transport(2.0680184, 48.8969373);
+Transport(2.3829986, 48.9105833);
